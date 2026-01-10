@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Android Screen Mirroring
+GenericName=Phone Screen
+Comment=
+Exec=zsh -c '~/user_scripts/android_scrcpy/android_scrcpy.sh'
+Terminal=false
+Categories=Utility;
+Keywords=mirror;screen;scrcpy;android;
+Icon=nvim
+StartupNotify=true

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Android Second Screen
+GenericName=Second Screen
+Comment=Second Screen Emulation for Android. Works with DeX.
+Exec=zsh -c '~/user_scripts/android_scrcpy/android_scrcpy.sh --desktop'
+Terminal=false
+Categories=Utility;
+Keywords=extend;screen;scrcpy;android;
+Icon=htop
+StartupNotify=true
