@@ -71,6 +71,11 @@ pkgs_productivity=(
 "obsidian" "zathura" "zathura-pdf-mupdf" "termusic" "cava"
 )
 
+# Group 14: General Utilities
+pkgs_general_utility=(
+"scrcpy"
+)
+
 # --------------------------------------------------------------------------
 # --- 2. ENGINE (Optimized) ---
 # --------------------------------------------------------------------------
@@ -163,6 +168,7 @@ install_group "Multimedia" "${pkgs_multimedia[@]}"
 install_group "System Admin" "${pkgs_sysadmin[@]}"
 install_group "Gnome Utilities" "${pkgs_gnome[@]}"
 install_group "Productivity" "${pkgs_productivity[@]}"
+install_group "General Utilities" "${pkgs_general_utility[@]}"
 
 printf "\n${BOLD}${GREEN}:: INSTALLATION COMPLETE ::${RESET}\n"
 printf "Reboot is recommended to load new drivers and Hyprland env vars.\n"
