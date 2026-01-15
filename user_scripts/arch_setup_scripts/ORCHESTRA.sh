@@ -11,7 +11,9 @@
 # --- USER CONFIGURATION AREA ---
 
 INSTALL_SEQUENCE=(
-    "U | 000_configure_uwsm_gpu.sh"
+    "U | 000_configure_keyboard.sh"
+    "U | 000_uwsm_env_comment.sh"
+#    "U | 000_configure_uwsm_gpu.sh"
     "U | 001_long_sleep_timeout.sh"
 #    "S | 002_battery_limiter.sh"
     "S | 003_pacman_config.sh"
@@ -21,7 +23,7 @@ INSTALL_SEQUENCE=(
     "S | 007_openssh_setup.sh"
     "U | 008_changing_shell_zsh.sh"
     "S | 009_aur_paru_fallback_yay.sh"
-    "S | 010_warp.sh"
+#    "S | 010_warp.sh"
     "U | 011_paru_packages_optional.sh"
 #    "S | 012_battery_limiter_again_dusk.sh"
     "U | 013_paru_packages.sh"
@@ -29,7 +31,7 @@ INSTALL_SEQUENCE=(
     "U | 015_aur_packages_user_services.sh"
 #    "S | 016_create_mount_directories.sh"
     "S | 017_pam_keyring.sh"
-    "U | 018_network_meter_service.sh"
+    "U | 018_copy_service_files.sh --default"
     "U | 019_battery_notify_service.sh"
     "U | 020_fc_cache_fv.sh"
     "U | 021_matugen_directories.sh"
@@ -48,7 +50,7 @@ INSTALL_SEQUENCE=(
 #    "S | 034_zram_optimize_swappiness.sh"
 #    "S | 035_powerkey_lid_close_behaviour.sh"
     "S | 036_logrotate_optimization.sh"
-    "S | 037_faillock_timeout.sh"
+#    "S | 037_faillock_timeout.sh"
     "U | 038_non_asus_laptop.sh --auto"
     "U | 039_file_manager_switch.sh"
     "U | 040_swaync_dgpu_fix.sh --disable"
@@ -60,14 +62,14 @@ INSTALL_SEQUENCE=(
     "U | 046_neovim_clean.sh"
     "U | 047_neovim_lazy_sync.sh"
     "U | 048_dusk_clipboard_errands_delete.sh --auto"
-    "S | 049_tty_autologin.sh"
+#    "S | 049_tty_autologin.sh"
     "S | 050_system_services.sh"
 #    "S | 051_initramfs_optimization.sh"
 #    "U | 052_git_config.sh"
 #    "U | 053_new_github_repo_to_backup.sh"
 #    "U | 054_reconnect_and_push_new_changes_to_github.sh"
 #    "S | 055_grub_optimization.sh"
-    "S | 056_systemdboot_optimization.sh"
+#    "S | 056_systemdboot_optimization.sh"
 #    "S | 057_hosts_files_block.sh"
     "S | 058_gtk_root_symlink.sh"
 #    "S | 059_preload_config.sh"
@@ -94,6 +96,8 @@ INSTALL_SEQUENCE=(
 #    "S | 080_btrfs_zstd_compression_stats.sh"
     "U | 081_key_sound_wayclick_setup.sh"
     "U | 082_config_bat_notify.sh --default"
+    "U | 083_set_thunar_terminal_kitty.sh"
+    "U | 084_package_removal.sh --auto"
 )
 
 # ==============================================================================

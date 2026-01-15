@@ -94,7 +94,11 @@ output_path = '~/.config/matugen/generated/wlogout-colors.css'
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spotify-colors.ini'
 output_path = '~/.config/matugen/generated/spotify-colors.ini'
-post_hook = 'killall -SIGUSR2 spotify; mkdir -p $HOME/.config/spicetify/Themes/Comfy; ln -nfs $HOME/.config/matugen/generated/spotify-colors.ini $HOME/.config/spicetify/Themes/Comfy/color.ini; spicetify config current_theme Comfy color_scheme Comfy; spicetify apply -n'
+post_hook = '''
+ln -nfs $HOME/.config/matugen/generated/spotify-colors.ini $HOME/.config/spicetify/Themes/Comfy/color.ini;
+spicetify apply -n;
+hyprctl dispatch sendshortcut "CTRL SHIFT, R, class:^(spotify)$"
+'''
 
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
@@ -109,4 +113,4 @@ post_hook = 'ln -nfs $HOME/.config/matugen/generated/alacritty-colors.toml $HOME
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/matugen/generated/waybar-colors.css'
-post_hook = 'pkill -SIGUSR2 waybar || true; notify-send "Theme Updated"'
+post_hook = '~/user_scripts/waybar/waybar_autostart.sh || true; notify-send "Theme Updated"'

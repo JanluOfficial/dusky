@@ -33,7 +33,7 @@ pkgs_audio=(
 
 # Group 6: Filesystem & Archives
 pkgs_filesystem=(
-"btrfs-progs" "compsize" "zram-generator" "udisks2" "udiskie" "dosfstools" "ntfs-3g" "gvfs" "gvfs-mtp" "gvfs-nfs" "gvfs-smb" "xdg-user-dirs" "usbutils" "usbmuxd" "gparted" "gnome-disk-utility" "baobab" "unzip" "zip" "unrar" "7zip" "cpio" "file-roller" "rsync" "grsync" "thunar" "thunar-archive-plugin"
+"btrfs-progs" "compsize" "zram-generator" "udisks2" "udiskie" "dosfstools" "ntfs-3g" "gvfs" "gvfs-mtp" "gvfs-nfs" "gvfs-smb" "xdg-user-dirs" "usbutils" "usbmuxd" "gparted" "gnome-disk-utility" "baobab" "unzip" "zip" "unrar" "7zip" "cpio" "file-roller" "rsync" "grsync" "thunar" "thunar-archive-plugin" "tumbler" "ffmpegthumbnailer" "webp-pixbuf-loader" "poppler-glib"
 )
 
 # Group 7: Network & Internet
@@ -43,7 +43,7 @@ pkgs_network=(
 
 # Group 8: Terminal & Shell
 pkgs_terminal=(
-"kitty" "zsh" "zsh-syntax-highlighting" "starship" "fastfetch" "bat" "eza" "fd" "tealdeer" "yazi" "zellij" "gum" "man-db" "ttyper" "tree" "fzf" "less" "ripgrep" "expac" "zsh-autosuggestions" "calcurse" "iperf3" "pkgstats" "libqalculate"
+"kitty" "foot" "zsh" "zsh-syntax-highlighting" "starship" "fastfetch" "bat" "eza" "fd" "tealdeer" "yazi" "zellij" "gum" "man-db" "ttyper" "tree" "fzf" "less" "ripgrep" "expac" "zsh-autosuggestions" "calcurse" "iperf3" "pkgstats" "libqalculate"
 )
 
 # Group 9: Development
@@ -58,7 +58,7 @@ pkgs_multimedia=(
 
 # Group 11: Sys Admin
 pkgs_sysadmin=(
-"btop" "htop" "nvtop" "inxi" "sysstat" "sysbench" "logrotate" "acpid" "tlp" "tlp-rdw" "thermald" "powertop" "gdu" "iotop" "iftop" "lshw" "wev" "pacman-contrib" "gnome-keyring" "libsecret" "seahorse" "yad" "dysk" "fwupd" "caligula"
+"btop" "htop" "dgop" "nvtop" "inxi" "sysstat" "sysbench" "logrotate" "acpid" "tlp" "tlp-rdw" "thermald" "powertop" "gdu" "iotop" "iftop" "lshw" "wev" "pacman-contrib" "gnome-keyring" "libsecret" "seahorse" "yad" "dysk" "fwupd" "caligula"
 )
 
 # Group 12: Gnome Utilities
