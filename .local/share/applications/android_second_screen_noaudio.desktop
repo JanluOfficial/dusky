@@ -7,5 +7,6 @@ Exec=zsh -c '~/user_scripts/android_scrcpy/android_scrcpy.sh --desktop --no-audi
 Terminal=false
 Categories=Utility;
 Keywords=extend;screen;scrcpy;android;
-Icon=htop
+Icon=computer
 StartupNotify=true
+Path=

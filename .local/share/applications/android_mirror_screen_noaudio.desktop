@@ -7,5 +7,6 @@ Exec=zsh -c '~/user_scripts/android_scrcpy/android_scrcpy.sh --no-audio'
 Terminal=false
 Categories=Utility;
 Keywords=mirror;screen;scrcpy;android;
-Icon=nvim
+Icon=phone
 StartupNotify=true
+Path=
