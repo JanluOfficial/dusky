@@ -1,11 +1,12 @@
 ## If you need help with installation or troubleshooting, join the Discord server.
-I'm currently overwhelmed with messages, emails, and comments. i'll get to everyone one by one, please be patient. i'm only one person behind this project.
+
 
 [Join Discord Server][discord]
 
 [discord]: https://discord.gg/Nv2a7yTBQS
 
-## Updated demo video now out on YouTube with all major features covered!
+## Updated demo video now out on YouTube with all major features covered! 
+(since the release of this video around 5 major features have been added, scroll down to the `overview` section for details)
 
 [Watch now][video]
 
@@ -21,20 +22,28 @@ YES YOU CAN HAVE HORIZONTAL WAYBAR. and you will be asked which side you want it
 - **waybar horizontal and vertical,:**  Take your pick during setup, easily toggleable from rofi as well. 
 here's what it looks like. 
 
-![New Nerdy Horizontal Waybar](Pictures/readme_assets/waybar_horizontal.png)
+![New Nerdy Horizontal Waybar](Pictures/readme_assets/waybar_horizontal.webp)
+
+![waybar block](Pictures/readme_assets/waybar_block.webp)
+
+![waybar circular](Pictures/readme_assets/waybar_circular.webp)
+
+![waybar_minimal](Pictures/readme_assets/waybar_minimal.webp)
 
 
-This repository is the result of 8 months of tinkering/breaking/fixing and polishing. Its a labor of love designed to feel as easy to install as a "standard" distribution but with the raw power and minimalism of arch. 
+### There's also a brand new Dusky Control Center that acts as a system overview gui for settings and features, it's exhaustive in it's scope, almost anything you want to set/change can be done from this one stop shop intuitive gui app. I'll keep adding more quality of life features to it over time.
 
-Since i build and maintain this all by myself, **please consider starring ⭐ this repo** as a token of support.
+![Dusky Control Center](Pictures/readme_assets/dusky_control_center.webp)
+
+This repository is the result of 8 months of tinkering/breaking/fixing and polishing. Its a labor of love designed to feel as easy to install as a "standard" distribution but with the raw power and minimalism of arch. **please consider starring ⭐ this repo** as a token of support.
 
 ## ⚠️ Prerequisites & Hardware
 
 ### Filesystem
 
-This setup is strictly optimized for **BTRFS**.
+This setup is strictly optimized for **BTRFS file system format**. (should also work on ext4 but not recommanded)
 
-- **Why?** ZSTD compression, Copy-on-Write (CoW) to prevent data corruption, and instant Snapshots.
+- **Why?** ZSTD compression, copy on write (CoW) to prevent data corruption, and you also get instant Snapshots.
     
 
 ### Hardware Config (Intel/Nvidia/AMD)
@@ -142,7 +151,21 @@ If a script fails (which can happen on a rolling release distro):
 
 ## overview
 
+Note : i've purposely decided to not use quickshell for anything in the interest of keeping this as light weight as possible, Quickshell can quickly add to ram and slow down your system, therefore everything is user friendly Tui to keep it snappy and lightweight while delivering on A WHOLE HOST OF FEATURES. Read below for most features.
+
 **utilities**
+
+- Music Recognition - allows you to look up what music is playing. 
+
+- Circle to search type feature. uses Google lens. 
+
+- Tui for chaining your hyprland's appearience like gaps, shadow color, blur strength, opacity strength and a lottt more!!
+
+- Ai llm local infrense using ollama side bar (terminal, incredilby resource efficient)
+
+- keybind TUI setter that auto checks for conflicts and unbinds any existing keybind in the default hyrland keybind.conf
+
+- Easily switch Swaync's side to either lift or right.
 
 - airmon wifi script for wifi testing/password cracking
     (only use on access points that you own, i'm not legally responsible if you use it for nefarious purposes)
@@ -156,7 +179,7 @@ If a script fails (which can happen on a rolling release distro):
 
 - battery notifier for laptops, you can customize it to show notifications at certain levels.
 
-- power saver mode, that only changes things for the current boot, so you can revert to default by rebooting. 
+- Togglable power saver mode.
 
 - system clean up (cache purge)- removes unwanted files to reclaim storage. 
 
@@ -273,4 +296,13 @@ If you run into issues, check the detailed Obsidian notes included in the repo (
 </div>
 
 
+
+# Acknowledgments:
+Thank you to all the Contributors!
+
+sddm is a modified version of the SilentSDDM project by @uiriansan (this is a great project! Kindly star it on github)
+
+[SilentSDDM by uiriansan][repo_linkk]
+
+[repo_linkk]: https://github.com/uiriansan/SilentSDDM/
 

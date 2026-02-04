@@ -19,7 +19,7 @@ set -o nounset
 set -o pipefail
 
 # --- Configuration ---
-readonly CONFIG_FILE="${HOME}/.config/hypr/source/appearance.conf"
+readonly CONFIG_FILE="${HOME}/.config/hypr/edit_here/source/appearance.conf"
 
 # Visual Constants
 readonly OP_ACTIVE_ON="0.8"
@@ -34,7 +34,7 @@ die() {
     local message="$1"
     printf 'Error: %s\n' "$message" >&2
     if command -v notify-send &>/dev/null; then
-        notify-send -u critical "Hyprland Error" "$message" 2>/dev/null || true
+        notify-send "Hyprland Error" "$message" 2>/dev/null || true
     fi
     exit 1
 }

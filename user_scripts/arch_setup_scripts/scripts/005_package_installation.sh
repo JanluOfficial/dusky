@@ -6,9 +6,9 @@
 
 # --- 1. CONFIGURATION ---
 
-# Group 1: Graphics & Drivers (Intel 12th Gen)
+# Group 1: Graphics & Drivers
 pkgs_graphics=(
-  "intel-media-driver" "mesa" "vulkan-intel" "mesa-utils" "intel-gpu-tools" "libva" "libva-utils" "vulkan-icd-loader" "vulkan-tools" "sof-firmware" "linux-firmware" "acpi_call"
+  "intel-media-driver" "mesa" "vulkan-intel" "mesa-utils" "intel-gpu-tools" "libva" "libva-utils" "vulkan-icd-loader" "vulkan-tools" "sof-firmware" "linux-firmware" "acpi_call-dkms"
 )
 
 # Group 2: Hyprland Core
@@ -33,7 +33,7 @@ pkgs_audio=(
 
 # Group 6: Filesystem & Archives
 pkgs_filesystem=(
-"btrfs-progs" "compsize" "zram-generator" "udisks2" "udiskie" "dosfstools" "ntfs-3g" "gvfs" "gvfs-mtp" "gvfs-nfs" "gvfs-smb" "xdg-user-dirs" "usbutils" "usbmuxd" "gparted" "gnome-disk-utility" "baobab" "unzip" "zip" "unrar" "7zip" "cpio" "file-roller" "rsync" "grsync" "thunar" "thunar-archive-plugin" "tumbler" "ffmpegthumbnailer" "webp-pixbuf-loader" "poppler-glib"
+"btrfs-progs" "compsize" "zram-generator" "udisks2" "udiskie" "dosfstools" "ntfs-3g" "gvfs" "gvfs-mtp" "gvfs-nfs" "gvfs-smb" "xdg-user-dirs" "usbutils" "usbmuxd" "gparted" "gnome-disk-utility" "baobab" "unzip" "zip" "unrar" "7zip" "cpio" "file-roller" "rsync" "grsync" "thunar" "thunar-archive-plugin" "thunar-volman" "tumbler" "ffmpegthumbnailer" "webp-pixbuf-loader" "poppler-glib"
 )
 
 # Group 7: Network & Internet

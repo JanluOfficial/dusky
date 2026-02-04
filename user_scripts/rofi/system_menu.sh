@@ -163,7 +163,7 @@ show_ai_menu() {
     case "${choice,,}" in
         *kokoro*gpu*) run_app "$SCRIPTS_DIR/tts_stt/kokoro_gpu/speak.sh" ;;
         *kokoro*cpu*) run_app "$SCRIPTS_DIR/tts_stt/kokoro_cpu/kokoro.sh" ;;
-        *whisper*)    run_app "$SCRIPTS_DIR/tts_stt/faster_whisper/faster_whisper_sst.sh" ;;
+        *whisper*)    run_app "$SCRIPTS_DIR/tts_stt/faster_whisper/faster_whisper_stt.sh" ;;
         *parakeet*)   run_app "$SCRIPTS_DIR/tts_stt/parakeet/parakeet.sh" ;;
         *ocr*)
             if region=$(slurp); then
@@ -177,9 +177,10 @@ show_ai_menu() {
 
 show_utils_menu() {
     local choice
-    choice=$(menu "Utils" "󰖩  Wi-Fi (TUI)\n󰂯  Bluetooth\n󰕾  Audio Mixer\n󰞅  Emoji Picker\n  Screenshot (Swappy)\n󰅇  Clipboard Persistence\n󰉋  File Manager Switch\n󰍽  Mouse Handedness\n󰌌  Wayclick (Key Sounds)")
+    choice=$(menu "Utils" "  Dusky Control Center\n󰖩  Wi-Fi (TUI)\n󰂯  Bluetooth\n󰕾  Audio Mixer\n󰞅  Emoji Picker\n  Screenshot (Swappy)\n󰅇  Clipboard Persistence\n󰉋  File Manager Switch\n󰍽  Mouse Handedness\n󰌌  Wayclick (Key Sounds)")
 
     case "${choice,,}" in
+        *dusky*) run_app "$SCRIPTS_DIR/dusky_system/dusky_control_center.py" ;;
         *wi-fi*)       run_term "wifitui" wifitui ;;
         *bluetooth*)   run_app blueman-manager ;;
         *audio*)       run_app pavucontrol ;;
@@ -202,8 +203,11 @@ show_visuals_menu() {
     choice=$(menu "Visuals & Display" "󰸌  Cycle Matugen Theme\n󰸌  Matugen Config\n󰸉  Wallpaper App\n󰸉  Rofi Wallpaper\n󱐋  Animations\n󰃜  Shaders\n󰖨  Hyprsunset Slider\n󰖳  Blur/Opacity/Shadow\n󰍜  Waybar Config\n󰶡  Rotate Screen (CW)\n󰶣  Rotate Screen (CCW)\n󰐕  Scale Up (+)\n󰐖  Scale Down (-)")
     
     case "${choice,,}" in
-        *cycle*)            run_app "$SCRIPTS_DIR/theme_matugen/random_theme.sh" ;;
-        *matugen*config*)   run_app "$SCRIPTS_DIR/theme_matugen/matugen_config.sh" ;;
+        # CHANGED: Now points to the new theme_ctl.sh with the random flag
+        *cycle*)            run_app "$SCRIPTS_DIR/theme_matugen/theme_ctl.sh" random ;;
+        # CHANGED: Now points to your new Rofi script location
+        *matugen*config*)   run_app "$SCRIPTS_DIR/rofi/rofi_theme.sh" ;;
+        
         *rofi*wallpaper*)   run_app "$SCRIPTS_DIR/rofi/rofi_wallpaper_selctor.sh" ;;
         *wallpaper*app*)    run_app waypaper ;;
         *animation*)        run_app rofi -show animations -modi "animations:$SCRIPTS_DIR/rofi/hypr_anim.sh" ;;

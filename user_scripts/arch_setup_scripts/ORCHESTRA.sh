@@ -12,7 +12,7 @@
 
 INSTALL_SEQUENCE=(
     "U | 000_configure_keyboard.sh"
-    "U | 000_uwsm_env_comment.sh"
+    "U | 000_uwsm_env_comment.sh --auto"
 #    "U | 000_configure_uwsm_gpu.sh"
     "U | 001_long_sleep_timeout.sh"
 #    "S | 002_battery_limiter.sh"
@@ -37,10 +37,10 @@ INSTALL_SEQUENCE=(
     "U | 021_matugen_directories.sh"
     "U | 022_wallpapers_download.sh"
     "U | 023_blur_shadow_opacity.sh"
-    "U | 024_swww_wallpaper_matugen.sh"
+    "U | 024_theme_ctl.sh set --defaults"
     "U | 025_qtct_config.sh"
     "U | 026_waypaper_config_reset.sh"
-    "U | 027_animation_symlink.sh"
+    "U | 027_animation_default.sh"
     "S | 028_udev_usb_notify.sh"
     "U | 029_terminal_default.sh"
 #    "S | 030_dusk_fstab.sh"
@@ -58,10 +58,10 @@ INSTALL_SEQUENCE=(
 #    "S | 042_ftp_arch.sh"
     "U | 043_tldr_update.sh"
 #    "U | 044_spotify.sh"
-    "U | 045_mouse_button_reverse.sh --right"
+#    "U | 045_mouse_button_reverse.sh --right"
     "U | 046_neovim_clean.sh"
     "U | 047_neovim_lazy_sync.sh"
-    "U | 048_dusk_clipboard_errands_delete.sh --auto"
+    "U | 048_dusk_clipboard_errands_delete.sh --delete"
 #    "S | 049_tty_autologin.sh"
     "S | 050_system_services.sh"
 #    "S | 051_initramfs_optimization.sh"
@@ -94,10 +94,14 @@ INSTALL_SEQUENCE=(
 #    "U | 078_kokoro_gpu_setup.sh" #requires nvidia gpu with at least 4gb vram
 #    "U | 079_parakeet_gpu_setup.sh" #requires nvidia gpu with at least 4gb vram
 #    "S | 080_btrfs_zstd_compression_stats.sh"
-    "U | 081_key_sound_wayclick_setup.sh"
+#    "U | 081_key_sound_wayclick_setup.sh"
     "U | 082_config_bat_notify.sh --default"
     "U | 083_set_thunar_terminal_kitty.sh"
     "U | 084_package_removal.sh --auto"
+
+
+    "U | 087_hypr_custom_config_setup.sh"
+    "U | 088_hyprctl_reload.sh"
 )
 
 # ==============================================================================

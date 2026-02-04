@@ -10,6 +10,16 @@
 set -u
 set -o pipefail
 
+LOCK_FILE="/tmp/rofi-wallpaper-selector-lock"
+
+# Lock check
+# Open the lock file. If it's busy (spamming), exit immediately.
+exec 201>"$LOCK_FILE"
+if ! flock -n 201; then
+	notify-send -a "Warning" "Please wait. Script is running." -u low -t 1000
+    exit 1
+fi
+
 # --- CONFIGURATION ---
 readonly WALLPAPER_DIR="${HOME}/Pictures/wallpapers"
 readonly CACHE_DIR="${HOME}/.cache/rofi-wallpaper-thumbs"
@@ -111,7 +121,7 @@ refresh_cache() {
         -o -iname "*.webp" -o -iname "*.gif" \
     \) -print0 | sort -z)
     
-    ( cleanup_orphans ) & disown
+    ( cleanup_orphans ) 201>&- & disown
 }
 
 get_matugen_flags() {
@@ -163,9 +173,9 @@ if [[ -n "$selection" ]]; then
         swww img "$full_path" \
             --transition-type grow \
             --transition-duration 2 \
-            --transition-fps 60 &
+            --transition-fps 60 201>&- &
             
-        setsid uwsm-app -- matugen $current_flags image "$full_path" &
+        setsid uwsm-app -- matugen $current_flags image "$full_path" 201>&- &
     else
         # If path resolution failed, cache might be corrupted. Delete it.
         rm -f "$CACHE_FILE"

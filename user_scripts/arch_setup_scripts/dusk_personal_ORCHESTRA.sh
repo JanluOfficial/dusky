@@ -37,10 +37,10 @@ INSTALL_SEQUENCE=(
     "U | 021_matugen_directories.sh"
     "U | 022_wallpapers_download.sh"
     "U | 023_blur_shadow_opacity.sh"
-    "U | 024_swww_wallpaper_matugen.sh"
+    "U | 024_theme_ctl.sh set --defaults"
     "U | 025_qtct_config.sh"
     "U | 026_waypaper_config_reset.sh"
-    "U | 027_animation_symlink.sh"
+    "U | 027_animation_default.sh"
     "S | 028_udev_usb_notify.sh"
     "U | 029_terminal_default.sh"
     "S | 030_dusk_fstab.sh"
@@ -98,6 +98,8 @@ INSTALL_SEQUENCE=(
     "U | 082_config_bat_notify.sh"
     "U | 083_set_thunar_terminal_kitty.sh"
     "U | 084_package_removal.sh"
+    "U | 087_hypr_custom_config_setup.sh"
+    "U | 088_hyprctl_reload.sh"
 )
 
 # ==============================================================================

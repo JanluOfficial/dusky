@@ -3,7 +3,7 @@
 #  Arch Linux Desktop Entry Path Fixer
 #  Environment: Hyprland / UWSM
 #  Description: Surgical update of 'Exec' paths in .desktop files to match $USER.
-#  Version: 2.0.0
+#  Version: 2.1.0
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ cleanup() {
     # If exit code is > 128, it was a signal (interrupt/kill)
     if (( code > 128 )); then
         printf '\n%s⚠ Script Interrupted (Signal %d)%s\n' \
-            "${C_YELLOW:-}" "$((code - 128))" "${C_RESET:-}"
+            "${C_YELLOW:-}" "$((code - 128))" "${C_RESET:-}" >&2
     fi
 }
 trap cleanup EXIT
@@ -56,25 +56,38 @@ readonly USER_SED_SAFE="${CURRENT_USER//\//\\/}"
 # ------------------------------------------------------------------------------
 readonly TARGET_FILES=(
     "asus_control.desktop"
-    "battery_notify_config.desktop"
     "btrfs_compression_stats.desktop"
     "brightness_slider.desktop"
     "cache_purge.desktop"
     "clipboard_persistance.desktop"
+    "dusky_appearances.desktop"
+    "dusky_battery_notify.desktop"
+    "dusky_control_center.desktop"
+    "dusky_hyprlock_switcher.desktop"
+    "dusky_hypridle_timeout.desktop"
+    "dusky_hypridle_toggle.desktop"
+    "dusky_input.desktop"
+    "dusky_keybinds.desktop"
+    "dusky_monitor.desktop"
+    "dusky_power.desktop"
+    "dusky_waybars.desktop"
+    "dusky_window_rules.desktop"
+    "dusky_swaync_side.desktop"
+    "dusky_service_toggle.desktop"
     "file_switcher.desktop"
-    "hypridle_timeout.desktop"
-    "hypridle_toggle.desktop"
-    "hyprlock_switcher.desktop"
+    "google_image_search.desktop"
     "hyprsunset_slider.desktop"
     "IO_Monitor.desktop"
     "iphone_vnc.desktop"
     "matugen.desktop"
-    "monitor_tui.desktop"
     "mouse_button_reverse.desktop"
+    "music_recognition.desktop"
     "new_github_repo.desktop"
+    "ollama_terminal.desktop"
     "opacity_blur_shadow.desktop"
     "openssh.desktop"
     "powersave.desktop"
+    "powersave_off.desktop"
     "process_terminator.desktop"
     "relink_github_repo.desktop"
     "rotate_screen_clockwise.desktop"
@@ -85,13 +98,11 @@ readonly TARGET_FILES=(
     "scale_down.desktop"
     "scale_up.desktop"
     "sysbench_benchmark.desktop"
-    "service_toggle.desktop"
     "tailscale_setup.desktop"
     "tailscale_uninstall.desktop"
     "volume_slider.desktop"
     "update_dusky.desktop"
     "warp.desktop"
-    "waybar_config_switcher.desktop"
     "wayclick.desktop"
     "wifi_security.desktop"
 )
@@ -143,6 +154,13 @@ file_needs_update() {
 # 4. Main Logic
 # ------------------------------------------------------------------------------
 main() {
+    # Check for quiet flag immediately
+    # Redirects stdout (FD 1) to /dev/null if flag is present.
+    # Stderr (FD 2) remains active for critical errors.
+    if [[ "${1:-}" == "--quiet" ]]; then
+        exec 1>/dev/null
+    fi
+
     local filename filepath
     local -i updated_count=0 skipped_count=0 missing_count=0
 
